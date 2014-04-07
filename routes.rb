@@ -19,5 +19,5 @@ get '/admin' do
 end
 
 get '/styles.css' do
-  scss :styles
+  scss :compiled_styles
 end
