@@ -1,8 +1,5 @@
-.container
-	%form{:class => 'form-signin', :role => 'form'}
-		%h2{:class => 'form-signin-heading'}Please sign in
-		%input{:class => 'form-control', :placeholder => 'Email address', :required => '', :autofocus => '', :type => 'email'}
-		%input{:class => 'form-control', :placeholder => 'Password', :required => '', :type => 'password'}
-		%label{:class => 'checkbox'}
-			%input{:value => 'remember-me', :type => 'checkbox'} Remember me
-		%button{:class => ['btn', 'btn', 'btn-lg', 'btn-primary', 'btn-block'], :type => 'submit'}Sign in
+%form{:class => 'form-signin', :role => 'form'}
+	%h2{:class => 'form-signin-heading'}Please sign in
+	%input{:class => 'form-control', :placeholder => 'Username', :required => '', :autofocus => '', :type => 'username'}
+	%input{:class => 'form-control', :placeholder => 'Password', :required => '', :type => 'password'}
+	%button{:class => ['btn', 'btn', 'btn-lg', 'btn-primary', 'btn-block'], :type => 'submit'}Sign in
