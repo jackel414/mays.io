@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'sinatra'
 require 'haml'
-require 'sass'
 
 get '/' do
   @title = 'Home'
@@ -16,8 +15,4 @@ end
 get '/admin' do
   @title = 'Admin Portal'
   haml :admin
-end
-
-get '/styles.css' do
-  scss :compiled_styles
 end
