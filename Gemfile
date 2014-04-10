@@ -1,8 +1,8 @@
-# A sample Gemfile
-source "https://rubygems.org"
-ruby '1.8.7'
-
-gem 'sinatra', :require => 'sinatra/base'
-gem 'erubis'
-gem 'rake'
-gem 'thin'
+source 'https://rubygems.org'
+gem 'sinatra', '1.3.4'
+gem 'rack-flash3', '1.0.1', :require => 'rack/flash'
+gem 'data_mapper', '1.2.0'
+gem 'dm-sqlite-adapter', '1.2.0'
+gem 'warden', '1.2.1'
+gem 'haml'
+gem 'bcrypt-ruby', :require => 'bcrypt'

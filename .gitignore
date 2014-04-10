@@ -5,6 +5,9 @@
 
 /.sass-cache/*
 
+/*.db
+/*.sqlite
+
 
 # OS generated files #
 

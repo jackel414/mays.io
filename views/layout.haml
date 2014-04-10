@@ -14,4 +14,10 @@
   %body
     .jumbotron
       .container
+    -if flash.success
+      %div{:style => "color: green"}
+        =flash.success
+    -if flash.error
+      %div{:style => "color: red"}
+        =flash.error
     =yield        
