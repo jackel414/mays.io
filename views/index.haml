@@ -3,3 +3,5 @@
   %p
     %a{:href => url('/login')} Admin Page
   %p
+    - if @message
+      = @message

@@ -26,6 +26,7 @@ class ZacharyMays < Sinatra::Base
     def authenticate!
       user = User.first(:username => params["username"])
       if user && user.authenticate(params["password"])
+        #flash.success = "Successfully Logged In"
         success!(user)
       else
         fail!("Could not log in")
@@ -48,12 +49,12 @@ class ZacharyMays < Sinatra::Base
   
   get '/' do
     @title = 'Home'
-    @user = User.all
   	haml :index
   end
-
+  
   get '/new' do
     @title = 'New User'
+    env['warden'].authenticate!
     haml :new
   end
 
@@ -65,15 +66,18 @@ class ZacharyMays < Sinatra::Base
 
   get '/login' do
     @title = 'Login'
+    if warden_handler.authenticated?
+      redirect '/admin'
+    end
     haml :login
   end
 
-  post "/session" do
+  post '/session' do
     warden_handler.authenticate!
     if warden_handler.authenticated?
-      redirect "/admin"
+      redirect '/admin'
     else
-      redirect "/fail"
+      redirect '/fail'
     end
   end
  
