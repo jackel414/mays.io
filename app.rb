@@ -27,6 +27,22 @@ class ZacharyMays < Sinatra::Base
       user = User.first(:username => params["username"])
       if user && user.authenticate(params["password"])
         #flash.success = "Successfully Logged In"
+        if user.username == 'guest'
+          Pony.mail :to => 'zackmays@gmail.com',
+                    :from => 'me@zacharymays.com',
+                    :subject => 'Guest Login',
+                    :body => 'A guest just logged into zacharymays.com',
+                    :via => :smtp,
+                    :via_options => {
+                      :address => 'smtp.gmail.com',
+                      :port => 587,
+                      :domain => 'flyingvines.com',
+                      :user_name => ENV['email_username'],
+                      :password => ENV['email_password'],
+                      :authentication => 'plain',
+                      :enable_starttls_auto => true                
+                    }
+        end          
         success!(user)
       else
         fail!("Could not log in")
