@@ -93,10 +93,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport (= 3.0.3)
   bcrypt-ruby
   data_mapper (= 1.2.0)
   dm-sqlite-adapter (= 1.2.0)
   haml
+  mail (= 2.2.20)
   pony
   rack-flash3 (= 1.0.1)
   sinatra (= 1.3.4)
