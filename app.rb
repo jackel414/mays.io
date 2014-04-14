@@ -4,7 +4,7 @@ Bundler.require
 require './model'
 
 class ZacharyMays < Sinatra::Base
-  use Rack::Session::Cookie, :secret => "nothingissecretontheinternet"
+  use Rack::Session::Cookie, :secret => "mysecretcode"
   use Rack::Flash, :accessorize => [:error, :success]
 
   use Warden::Manager do |config|
@@ -42,7 +42,8 @@ class ZacharyMays < Sinatra::Base
                       :authentication => 'plain',
                       :enable_starttls_auto => true                
                     }
-        end          
+        end
+        session[:access] = user.site_admin
         success!(user)
       else
         fail!("Could not log in")
@@ -71,11 +72,13 @@ class ZacharyMays < Sinatra::Base
   get '/new' do
     @title = 'New User'
     env['warden'].authenticate!
+    unless session[:access] then redirect '/'
+    end
     haml :new
   end
 
   post '/new' do
-    @user = User.new(:first_name => params[:first_name], :last_name => params[:last_name], :username => params[:username], :email => params[:email], :password => params[:password], :site_admin => true, :created => Time.now)
+    @user = User.new(:first_name => params[:first_name], :last_name => params[:last_name], :username => params[:username], :email => params[:email], :password => params[:password], :site_admin => false, :created => Time.now)
     @user.save
     redirect '/'
   end
@@ -104,6 +107,7 @@ class ZacharyMays < Sinatra::Base
   get '/admin' do
     @title = 'Admin Portal'
     env['warden'].authenticate!
+    @user = session[:access]
     haml :admin
   end
   
