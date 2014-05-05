@@ -22,4 +22,13 @@
     -if flash.error
       %div{:style => "color: red"}
         =flash.error
-    =yield        
+    =yield
+    - if @user
+      #footer
+        .container
+          %p{:class => 'text-muted'}
+            %a{:href => '/'}Home
+            |
+            %a{:href => '/projects'}Projects
+            |
+            %a{:href => '/logout'}Logout

@@ -1,7 +1,8 @@
 .centered_div
   %h1 Deep thoughts here...
-  %p
-    %a{:href => url('/login')} Admin Page
+  - unless @user
+    %p
+      %a{:href => url('/login')}Projects
   %p
     - if @message
       = @message
