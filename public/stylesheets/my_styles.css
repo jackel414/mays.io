@@ -19,3 +19,21 @@
 .text-muted {
   margin: 20px 0;
 }
+
+#name_headline {
+  position: absolute;
+}
+#name_headline a {
+  color: black;
+}
+#name_headline a:hover {
+  text-decoration: none;
+}
+
+.headline_div {
+  height: 80px;
+}
+
+.headline_menu {
+  margin-top: 15px;
+}

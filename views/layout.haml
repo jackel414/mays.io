@@ -14,6 +14,22 @@
     %script{:type => "text/javascript", :src => "scripts/jquery.min.js"}
     %script{:type => "text/javascript", :src  => "scripts/my_scripts.js"}
   %body
+    %div{:class => 'container headline_div'}
+      %h1{:id => 'name_headline'}
+        %a{:href => '/'}Zachary Mays
+      %ul{:class => 'nav navbar-nav navbar-right headline_menu'}
+        %li
+          %a{:href => '/about'}about
+        %li
+          %a{:href => '/login'}projects
+        %li
+          %a{:href => '/contact'}contact
+        - if session[:access] == 'Admin'
+          %li
+            %a{:href => '/users'}users
+        - if session[:access]
+          %li
+            %a{:href => '/logout'}logout
     .jumbotron
       .container
     -if flash.success
@@ -23,12 +39,3 @@
       %div{:style => "color: red"}
         =flash.error
     =yield
-    - if @user
-      #footer
-        .container
-          %p{:class => 'text-muted'}
-            %a{:href => '/'}Home
-            |
-            %a{:href => '/projects'}Projects
-            |
-            %a{:href => '/logout'}Logout

@@ -1,8 +1,7 @@
-.centered_div
-  %h1 Deep thoughts here...
-  - unless @user
-    %p
-      %a{:href => url('/login')}Projects
-  %p
-    - if @message
-      = @message
+.container
+  %p{:class => 'lead'}
+    This is 
+    %a{:href => '/about'}my 
+    personal site.  I mainly use it to keep track of 
+    %a{:href => '/login'}projects 
+    I'm working on.

@@ -43,7 +43,7 @@ class ZacharyMays < Sinatra::Base
                       :enable_starttls_auto => true                
                     }
         end
-        session[:access] = user.site_admin
+        session[:access] = user.role
         success!(user)
       else
         fail!("Could not log in")
@@ -73,13 +73,13 @@ class ZacharyMays < Sinatra::Base
   get '/new' do
     @title = 'New User'
     env['warden'].authenticate!
-    unless session[:access] then redirect '/'
+    unless session[:access] == 'Admin' then redirect '/'
     end
     haml :new
   end
 
   post '/new' do
-    @user = User.new(:first_name => params[:first_name], :last_name => params[:last_name], :username => params[:username], :email => params[:email], :password => params[:password], :site_admin => false, :created => Time.now)
+    @user = User.new(:first_name => params[:first_name], :last_name => params[:last_name], :username => params[:username], :email => params[:email], :password => params[:password], :role => params[:role], :created => Time.now)
     @user.save
     redirect '/'
   end

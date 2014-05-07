@@ -14,7 +14,7 @@ class User
   property :username, Text, :required => true
   property :email, Text, :required => true
   property :password, BCryptHash
-  property :site_admin, Boolean, :required => true, :default => false
+  property :role, Text, :required => true
   property :created, DateTime
 
 
