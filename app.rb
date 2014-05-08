@@ -65,13 +65,13 @@ class ZacharyMays < Sinatra::Base
   
   
   get '/' do
-    @title = 'Zachary Mays - Home'
+    @title = 'Zachary Mays | Home'
     @user = session[:access]
   	haml :index
   end
   
   get '/new' do
-    @title = 'New User'
+    @title = 'Zachary Mays | New User'
     env['warden'].authenticate!
     unless session[:access] == 'Admin' then redirect '/'
     end
@@ -85,7 +85,7 @@ class ZacharyMays < Sinatra::Base
   end
 
   get '/login' do
-    @title = 'Login'
+    @title = 'Zachary Mays | Login'
     if warden_handler.authenticated?
       redirect '/projects'
     end
@@ -106,7 +106,7 @@ class ZacharyMays < Sinatra::Base
   end
   
   get '/projects' do
-    @title = 'Projects'
+    @title = 'Zachary Mays | Projects'
     #env['warden'].authenticate!
     @user = session[:access]
     haml :projects
@@ -118,14 +118,14 @@ class ZacharyMays < Sinatra::Base
   end
   
   get '/users' do
-    @title = 'Users'
+    @title = 'Zachary Mays | Users'
     env['warden'].authenticate!
     @users = User.all
     haml :users
   end
   
   get '/contact' do
-    @title = 'Contact'
+    @title = 'Zachary Mays | Contact'
     haml :contact
   end
 
