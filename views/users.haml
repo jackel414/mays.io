@@ -1,4 +1,11 @@
 .container
-  - @users.each do |user|
-    = user.first_name + ' ' + user.last_name + ' - ' + user.role
-    %br
+  -if session[:access] == "Admin"
+    - @users.each do |user|
+      = user.first_name + ' ' + user.last_name + ' - ' + user.role
+      %br
+  -else
+    %p{:class => 'lead'}
+      This section is for admins only. Return 
+      = succeed '.' do
+        %a{:href=> '/'} home    
+      
