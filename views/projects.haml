@@ -1,8 +1,14 @@
 .container
-  %h3 Projects:
-  %ul
-    %li
-      %a{:href => 'http://www.howdourteamsdo.com', :target => '_blank'}How'd Our Teams Do
-    %li
-      %a{:href => 'http://thawing-shelf-3809.herokuapp.com/home', :target => '_blank'}Wino Log
-  %br
+  -if session[:access]
+    %h3 Projects:
+    %ul
+      %li
+        %a{:href => 'http://www.howdourteamsdo.com', :target => '_blank'}How'd Our Teams Do
+      %li
+        %a{:href => 'http://thawing-shelf-3809.herokuapp.com/home', :target => '_blank'}Wino Log
+    %br
+  -else
+    %p{:class => 'lead'}
+      All my projects are currently private.
+      %a{:href => '/login'}Log in
+      to view them.

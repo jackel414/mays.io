@@ -1,0 +1,4 @@
+.container
+  - @users.each do |user|
+    = user.first_name + ' ' + user.last_name + ' - ' + user.role
+    %br

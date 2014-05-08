@@ -107,7 +107,7 @@ class ZacharyMays < Sinatra::Base
   
   get '/projects' do
     @title = 'Projects'
-    env['warden'].authenticate!
+    #env['warden'].authenticate!
     @user = session[:access]
     haml :projects
   end
@@ -115,6 +115,18 @@ class ZacharyMays < Sinatra::Base
   get '/logout' do
     warden_handler.logout
     redirect '/'
+  end
+  
+  get '/users' do
+    @title = 'Users'
+    env['warden'].authenticate!
+    @users = User.all
+    haml :users
+  end
+  
+  get '/contact' do
+    @title = 'Contact'
+    haml :contact
   end
 
 end
