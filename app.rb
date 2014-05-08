@@ -29,7 +29,7 @@ class ZacharyMays < Sinatra::Base
         #flash.success = "Successfully Logged In"
         if user.username == 'guest'
           Pony.mail :to => 'zackmays@gmail.com',
-                    :from => 'me@zacharymays.com',
+                    :from => 'zack@mays.io',
                     :subject => 'Guest Login',
                     :body => 'A guest just logged into zacharymays.com',
                     :via => :smtp,
