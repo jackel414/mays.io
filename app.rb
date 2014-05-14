@@ -31,7 +31,7 @@ class ZacharyMays < Sinatra::Base
           Pony.mail :to => 'zackmays@gmail.com',
                     :from => 'zack@mays.io',
                     :subject => 'Guest Login',
-                    :body => 'A guest just logged into zacharymays.com',
+                    :body => 'A guest just logged into mays.io',
                     :via => :smtp,
                     :via_options => {
                       :address => 'smtp.gmail.com',
