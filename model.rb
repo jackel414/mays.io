@@ -16,6 +16,7 @@ class User
   property :password, BCryptHash
   property :role, Text, :required => true
   property :created, DateTime
+  property :last_logged_in, DateTime
 
 
   def authenticate(attempted_password)

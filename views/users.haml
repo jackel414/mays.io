@@ -1,7 +1,7 @@
 .container
   -if session[:access] == "Admin"
     - @users.each do |user|
-      = user.first_name + ' ' + user.last_name + ' - ' + user.role
+      = user.first_name + ' ' + user.last_name + ', ' + user.role + '.  Last logged in: ' + (user.last_logged_in ? user.last_logged_in.to_s.gsub!(/T/, ' ') : 'Never')
       %br
   -else
     %p{:class => 'lead'}

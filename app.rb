@@ -26,7 +26,7 @@ class ZacharyMays < Sinatra::Base
     def authenticate!
       user = User.first(:username => params["username"])
       if user && user.authenticate(params["password"])
-        #flash.success = "Successfully Logged In"
+        #flash[:success] = "Successfully Logged In"
         if user.username == 'guest'
           Pony.mail :to => 'zackmays@gmail.com',
                     :from => 'zack@mays.io',
@@ -44,6 +44,7 @@ class ZacharyMays < Sinatra::Base
                     }
         end
         session[:access] = user.role
+        user.update(:last_logged_in => Time.now())
         success!(user)
       else
         fail!("Could not log in")
