@@ -12,6 +12,7 @@
     %link{:rel => "stylesheet", :href => "stylesheets/signin.css"}
     %link{:rel => "stylesheet", :href => "stylesheets/my_styles.css"}
     %script{:type => "text/javascript", :src => "scripts/jquery.min.js"}
+    %script{:type => "text/javascript", :src => "https://www.google.com/jsapi"}
     %script{:type => "text/javascript", :src  => "scripts/my_scripts.js"}
   %body
     %div{:class => 'container headline_div'}
@@ -19,7 +20,10 @@
         %a{:href => '/'}mays | io
       %ul{:class => 'nav navbar-nav navbar-right headline_menu'}
         %li
-          %a{:href => 'https://www.linkedin.com/pub/zachary-mays/a/295/945', :target => '_blank'}about
+          - if session[:access]
+            %a{:href => '/about'}about
+          - else
+            %a{:href => 'https://www.linkedin.com/pub/zachary-mays/a/295/945', :target => '_blank'}about
         %li
           %a{:href => '/projects'}projects
         %li

@@ -47,6 +47,7 @@ class ZacharyMays < Sinatra::Base
         user.update(:last_logged_in => Time.now())
         success!(user)
       else
+        session[:message] = 'Incorrect Credentials'
         fail!("Could not log in")
       end
     end
@@ -68,6 +69,7 @@ class ZacharyMays < Sinatra::Base
   get '/' do
     @title = 'Zachary Mays | Home'
     @user = session[:access]
+    session[:message] = nil
   	haml :index
   end
   
@@ -87,6 +89,7 @@ class ZacharyMays < Sinatra::Base
 
   get '/login' do
     @title = 'Zachary Mays | Login'
+    session[:message] = nil
     if warden_handler.authenticated?
       redirect '/projects'
     end
@@ -128,6 +131,11 @@ class ZacharyMays < Sinatra::Base
   get '/contact' do
     @title = 'Zachary Mays | Contact'
     haml :contact
+  end
+
+  get '/about' do
+    @title = 'Zachary Mays | About'
+    haml :about
   end
 
 end

@@ -1,7 +1,7 @@
 .centered_div
-  -if @message
+  -if session[:message]
     %p{:class => 'lead'}
-      Username/password incorrect. Please
+      Username and/or password incorrect. Please
       %a{:href => '/login'}try again.
   -else
     %p{:class => 'lead'}

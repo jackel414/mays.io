@@ -1,0 +1,69 @@
+.container
+  %p{:class => 'lead'}Programming Skills:
+  %hr
+  :javascript
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var dataTable = new google.visualization.DataTable();
+      dataTable.addColumn('string', 'Language');
+      dataTable.addColumn('number', 'Hours');
+      dataTable.addRows([
+        ['JavaScript', 4],
+        ['Ruby', 5],
+        ['Python', 2],
+        ['HTML / CSS', 4],
+        ['PHP', 5]
+      ]);
+
+      var options = {
+        title: 'Languages',
+        is3D: true,
+        pieSliceText: 'label',
+        tooltip: { trigger: 'none' },
+        legend: 'none'
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+      
+      function selectHandler() {
+        var selectedItem = chart.getSelection()[0];
+        if (selectedItem) {
+          var value = dataTable.getValue(selectedItem.row, 0);
+          //alert('The user selected ' + value);
+          $(".skill_list").hide();
+          if(value == 'PHP') {
+            $("#php_skills").fadeToggle();
+          } else if(value == 'Ruby') {
+            $("#ruby_skills").fadeToggle();
+          } else if(value == 'Python') {
+            $("#python_skills").fadeToggle();
+          } else if(value == 'HTML / CSS') {
+            $("#front_end_skills").fadeToggle();
+          } else if(value == 'JavaScript') {
+            $("#js_skills").fadeToggle();
+          }
+        }
+      }
+
+      google.visualization.events.addListener(chart, 'select', selectHandler);
+      chart.draw(dataTable, options);
+    }
+  %div{:id => "piechart"}
+  #programming_skills
+    %ul{:id => "php_skills", :class => "skill_list"}
+      %li CakePHP
+    %ul{:id => "ruby_skills", :class => "skill_list"}
+      %li Ruby on Rails
+      %li Sinatra
+    %ul{:id => "python_skills", :class => "skill_list"}
+      %li Flask
+    %ul{:id => "front_end_skills", :class => "skill_list"}
+      %li HTML5
+      %li CSS3
+      %li HAML
+      %li SASS
+    %ul{:id => "js_skills", :class => "skill_list"}
+      %li JQuery
+      %li Backbone.js
+      %li Node.js

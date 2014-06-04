@@ -37,3 +37,20 @@
 .headline_menu {
   margin-top: 15px;
 }
+
+#programming_skills {
+  padding-top: 100px;
+  width: 530px;
+  float: right;
+}
+
+.skill_list {
+  display: none;
+}
+
+#piechart {
+  width: 600px;
+  height: 400px;
+  float: left;
+}
+
