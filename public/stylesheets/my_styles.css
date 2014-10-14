@@ -1,3 +1,16 @@
+.center-block {
+  margin: 30px 0;
+}
+
+.panel {
+  height: 200px;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.panel-body {
+}
+
 .centered_div {
 	text-align: center;
   padding-top: 20px;
