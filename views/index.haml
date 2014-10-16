@@ -1,16 +1,40 @@
 .container
   %h1{:class => 'col-md-12 centered_div'}mays (i / o)
   %div{:class => 'col-sm-10 center-block'}
-    %div{:class => 'col-md-offset-2 col-md-5'}
+    %div{:id => 'panel1Link', :class => 'col-md-offset-2 col-md-5'}
       %div{:class => 'panel panel-primary'}
         %div{:class => 'panel-body'}"it is a miracle that curiosity survives formal education"
-    %div{:class => 'col-md-5'}
+    %div{:id => 'panel2Link', :class => 'col-md-5'}
       %div{:class => 'panel panel-primary'}
         %div{:class => 'panel-body'}"if the world’s at large, why should i remain?"
   %div{:class => 'col-sm-10 center-block'}
-    %div{:class => 'col-md-offset-2 col-md-5'}
+    %div{:id => 'panel3Link', :class => 'col-md-offset-2 col-md-5'}
       %div{:class => 'panel panel-primary'}
         %div{:class => 'panel-body'}"play it fucking loud"
-    %div{:class => 'col-md-5'}
+    %div{:id => 'panel4Link', :class => 'col-md-5'}
       %div{:class => 'panel panel-primary'}
         %div{:class => 'panel-body'}"the road of excess leads to the palace of wisdom"
+
+%div{:id => 'panel1Content', :class => 'searchBox', :title => 'Panel One'}
+  %p This is the content of my first panel.
+
+%div{:id => 'panel2Content', :class => 'searchBox', :title => 'Panel Two'}
+  %p Enter short or full name:
+  %form{:method => 'post', :action => 'organization_list.php?search=org'}
+    %input{:type => 'text', :id => 'searchOrgName', :name => 'searchOrgName', :size => '30'}
+      %p{:id => 'advancedOrgSearch'}
+        %a{:href => 'organization_search.php', :onclick => 'return notYet()'}Advanced Search
+
+%div{:id => 'panel3Content', :class => 'searchBox', :title => 'Panel Three'}
+  %p Enter short or full name:
+  %form{:method => 'post', :action => 'organization_list.php?search=org'}
+    %input{:type => 'text', :id => 'searchOrgName', :name => 'searchOrgName', :size => '30'}
+      %p{:id => 'advancedOrgSearch'}
+        %a{:href => 'organization_search.php', :onclick => 'return notYet()'}Advanced Search
+
+%div{:id => 'panel4Content', :class => 'searchBox', :title => 'Panel Four'}
+  %p Enter short or full name:
+  %form{:method => 'post', :action => 'organization_list.php?search=org'}
+    %input{:type => 'text', :id => 'searchOrgName', :name => 'searchOrgName', :size => '30'}
+      %p{:id => 'advancedOrgSearch'}
+        %a{:href => 'organization_search.php', :onclick => 'return notYet()'}Advanced Search
