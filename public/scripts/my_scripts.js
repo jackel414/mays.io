@@ -28,17 +28,9 @@ function dialog_boxes() {
 		var hook = 'panel' + i + 'Content';
 		$('#' + hook).dialog({
 			autoOpen: false,
-			height: 300,
-			width: 400,
+			height: 650,
+			width: 700,
 			modal: true,
-			buttons: {
-				Search: function() {
-					$(this).find("form").submit();
-				},
-				Cancel: function() {
-					$(this).dialog("close");
-				}
-			}
 		});		
 	}	
 };
