@@ -17,6 +17,33 @@
     %script{:type => "text/javascript", :src => "https://www.google.com/jsapi"}
     %script{:type => "text/javascript", :src  => "scripts/my_scripts.js"}
   %body
+    %div{:class => 'container headline_div'}
+      %h1{:id => 'name_headline'}
+        %a{:href => '/'}mays | io
+      %ul{:class => 'nav navbar-nav navbar-right headline_menu'}
+        %li
+          - if session[:access]
+            %a{:href => '/about'}about
+          - else
+            %a{:href => 'https://www.linkedin.com/pub/zachary-mays/a/295/945', :target => '_blank'}about
+        %li
+          %a{:href => '/projects'}projects
+        %li
+          %a{:href => '/contact'}contact
+        - if session[:access] == 'Admin'
+          %li
+            %a{:href => '/users'}users
+        - if session[:access]
+          %li
+            %a{:href => '/logout'}logout
+    .jumbotron
+      .container
+    -if flash.success
+      %div{:style => "color: green"}
+        =flash.success
+    -if flash.error
+      %div{:style => "color: red"}
+        =flash.error
     =yield
     %script{:type=>"text/javascript"}
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -138,4 +138,9 @@ class ZacharyMays < Sinatra::Base
     haml :about
   end
 
+  get '/redesign' do
+    env['warden'].authenticate!
+    haml :redesign, :layout => false
+  end
+
 end

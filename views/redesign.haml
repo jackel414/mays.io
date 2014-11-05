@@ -1,0 +1,59 @@
+!!!
+%html{:lang => 'en'}
+  %head
+    %meta{'http-equiv' => 'content-type', :content => 'text/html', :charset => 'utf-8'}
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1'}
+    %meta{:name => 'description', :content => ''}
+    %meta{:name => 'author', :content => ''}
+    /%link{:rel => 'shortcut icon', :href => 'http://getbootstrap.com/assets/ico/favicon.ico'}
+    %title 
+      = @title
+    %link{:rel => "stylesheet", :href => "stylesheets/bootstrap.css"}
+    %link{:rel => "stylesheet", :href => "stylesheets/signin.css"}
+    %link{:rel => "stylesheet", :href => "stylesheets/my_styles.css"}
+    %link{:rel => "stylesheet", :href => "stylesheets/jquery-ui.min.css"}
+    %script{:type => "text/javascript", :src => "scripts/jquery.min.js"}
+    %script{:type => "text/javascript", :src => "scripts/jquery-ui-1.10.4.custom.min.js"}
+    %script{:type => "text/javascript", :src => "https://www.google.com/jsapi"}
+    %script{:type => "text/javascript", :src  => "scripts/my_scripts.js"}
+  %body
+    %div{:class => 'col-sm-12 center-block main_panel', :id => 'home_panel'}
+      %h1{:class => 'col-md-12 centered_div'}mays (i / o)
+      %div{:class => 'col-sm-10 center-block'}
+        %div{:id => 'panel1Link', :class => 'col-md-offset-2 col-md-5'}
+          %div{:class => 'panel panel-primary'}
+            %a{:href => '#education', :class => 'panel-body'}"it is a miracle that curiosity survives formal education"
+            /%div{:class => 'panel-body'}"it is a miracle that curiosity survives formal education"
+        %div{:id => 'panel2Link', :class => 'col-md-5'}
+          %div{:class => 'panel panel-primary'}
+            %a{:href => '#travel', :class => 'panel-body'}"if the world’s at large, why should i remain?"
+            /%div{:class => 'panel-body'}"if the world’s at large, why should i remain?"
+      %div{:class => 'col-sm-10 center-block'}
+        %div{:id => 'panel3Link', :class => 'col-md-offset-2 col-md-5'}
+          %div{:class => 'panel panel-primary'}
+            %a{:href => '#music', :class => 'panel-body'}"play it fucking loud"
+            /%div{:class => 'panel-body'}"play it fucking loud"
+        %div{:id => 'panel4Link', :class => 'col-md-5'}
+          %div{:class => 'panel panel-primary'}
+            %a{:href => '#wine', :class => 'panel-body'}"the road of excess leads to the palace of wisdom"
+            /%div{:class => 'panel-body'}"the road of excess leads to the palace of wisdom"
+    %div{:class => 'col-sm-12 center-block main_panel', :id => 'education'}
+    %div{:class => 'col-sm-12 center-block main_panel', :id => 'travel'}
+    %div{:class => 'col-sm-12 center-block main_panel', :id => 'music'}
+    %div{:class => 'col-sm-12 center-block main_panel', :id => 'wine'}
+
+    %div{:id => 'panel1Content', :class => 'searchBox', :title => '"it is a miracle that curiosity survives formal education"'}
+      %p This is going to be content about my skills.
+
+    %div{:id => 'panel2Content', :class => 'searchBox', :title => '"if the world’s at large, why should i remain?"'}
+      %p This is going to be a description of my travels.
+
+    %div{:id => 'panel3Content', :class => 'searchBox', :title => '"play it fucking loud"'}
+      %p This will be about the music I listen to.
+
+    %div{:id => 'panel4Content', :class => 'searchBox', :title => '"the road of excess leads to the palace of wisdom"'}
+      %p This will be primarily about wine.
+
+
+
+
