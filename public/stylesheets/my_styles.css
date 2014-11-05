@@ -67,3 +67,33 @@
   float: left;
 }
 
+.main_panel {
+  height: 800px;
+  margin: 0px;
+}
+
+.panel a, .panel.a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+#home_panel {
+  background-color: #cccccc;
+}
+
+#education {
+  background-color: red;
+}
+
+#travel {
+  background-color: blue;
+}
+
+#music {
+  background-color: yellow;
+}
+
+#wine {
+  background-color: orange;
+}
+

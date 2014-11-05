@@ -1,11 +1,11 @@
 $(document).ready(function() {
 	dialog_boxes();
-
+	/*
 	$(function() {
 		$('#panel1Link').on("click", function() {
 			$('#panel1Content').dialog("open");
 		});		
-	})
+	})	
 	$(function() {
 		$('#panel2Link').on("click", function() {
 			$('#panel2Content').dialog("open");
@@ -21,6 +21,7 @@ $(document).ready(function() {
 			$('#panel4Content').dialog("open");
 		});		
 	})
+	*/
 });
 
 function dialog_boxes() {
