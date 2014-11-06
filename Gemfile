@@ -9,3 +9,4 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'pony'
 gem 'mail', '2.2.20'
 gem 'activesupport', '3.0.3'
+ruby "1.8.7"
