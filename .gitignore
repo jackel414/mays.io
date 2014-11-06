@@ -9,6 +9,9 @@
 /*.sqlite
 /env.rb
 
+/vendor
+/tmp
+
 
 # OS generated files #
 
