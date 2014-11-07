@@ -77,22 +77,22 @@
 }
 
 #home_panel {
-  background-color: #cccccc;
+  background: url('/background_image_large.jpg') no-repeat center center;
 }
 
 #education {
-  background-color: red;
+  background-color: #ff8989;
 }
 
 #travel {
-  background-color: blue;
+  background-color: #8989ff;
 }
 
 #music {
-  background-color: yellow;
+  background-color: #ffff89;
 }
 
 #wine {
-  background-color: orange;
+  background-color: #ffd589;
 }
 
