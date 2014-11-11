@@ -4,7 +4,7 @@ $(document).ready(function() {
 	$(function() {
 		$('#panel1Link').on("click", function() {
 			//$('#panel1Content').dialog("open");
-			scrollToAnchor('education');
+			scrollToAnchor('skills');
 		});
 	})	
 
@@ -26,6 +26,13 @@ $(document).ready(function() {
 		$('#panel4Link').on("click", function() {
 			//$('#panel4Content').dialog("open");
 			scrollToAnchor('wine');
+		});		
+	})
+	
+	$(function() {
+		$('.homeLink').on("click", function() {
+			//$('#panel4Content').dialog("open");
+			scrollToAnchor('home');
 		});		
 	})
 });

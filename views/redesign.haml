@@ -17,6 +17,7 @@
     %script{:type => "text/javascript", :src => "https://www.google.com/jsapi"}
     %script{:type => "text/javascript", :src  => "scripts/my_scripts.js"}
   %body
+    %a{:name => 'home'}
     %div{:class => 'col-sm-12 center-block main_panel', :id => 'home_panel'}
       %h1{:class => 'col-md-12 centered_div'}mays (i / o)
       %div{:class => 'col-sm-10 center-block'}
@@ -37,10 +38,12 @@
           %div{:class => 'panel panel-primary'}
             /%a{:href => '#wine', :class => 'panel-body'}"the road of excess leads to the palace of wisdom"
             %div{:class => 'panel-body'}"the road of excess leads to the palace of wisdom"
-    %div{:class => 'col-sm-12 center-block main_panel', :id => 'education'}
+    %div{:class => 'col-sm-12 center-block main_panel', :id => 'skills'}
+      %hr
       %p &nbsp
-      %a{:name => 'education'}
+      %a{:name => 'skills'}
       %p &nbsp
+      %img{:src => "images/arrow.jpg", :class => 'homeLink'}
       %p{:class => 'lead'}This panel will talk about my skills (chart added as a placeholder).
       %p &nbsp
       %p{:class => 'lead'}Programming Skills:
@@ -109,22 +112,29 @@
           %li SASS
         %ul{:id => "js_skills", :class => "skill_list"}
           %li JQuery
+          %li Ember.js
           %li Backbone.js
           %li Node.js
     %div{:class => 'col-sm-12 center-block main_panel', :id => 'travel'}
+      %hr
       %p &nbsp
       %a{:name => 'travel'}
       %p &nbsp
+      %img{:src => "images/arrow.jpg", :class => 'homeLink'}
       %p{:class => 'lead'}This panel will have travel information / photos (maybe).
     %div{:class => 'col-sm-12 center-block main_panel', :id => 'music'}
+      %hr
       %p &nbsp
       %a{:name => 'music'}
       %p &nbsp
+      %img{:src => "images/arrow.jpg", :class => 'homeLink'}
       %p{:class => 'lead'}This panel will contain information about music I listen to (maybe am listening too).
     %div{:class => 'col-sm-12 center-block main_panel', :id => 'wine'}
+      %hr
       %p &nbsp
       %a{:name => 'wine'}
       %p &nbsp
+      %img{:src => "images/arrow.jpg", :class => 'homeLink'}
       %p{:class => 'lead'}
         This panel will talk about my love for wine, with a link to my blog (
         %a{:href => 'http://decantingmesoftly.com/', :target => '_blank'}like this

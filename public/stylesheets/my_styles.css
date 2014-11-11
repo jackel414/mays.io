@@ -80,7 +80,9 @@
   background: url('/background_image_large.jpg') no-repeat center center;
 }
 
-#education {
+/*
+
+#skills {
   background-color: #ff8989;
 }
 
@@ -94,5 +96,15 @@
 
 #wine {
   background-color: #ffd589;
+}
+
+*/
+
+.homeLink {
+  float: right;
+}
+
+.homeLink:hover {
+  cursor: pointer;
 }
 
