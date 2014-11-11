@@ -140,6 +140,7 @@ class ZacharyMays < Sinatra::Base
 
   get '/redesign' do
     env['warden'].authenticate!
+    @title = 'Zachary Mays | Site Redesign'
     haml :redesign, :layout => false
   end
 
