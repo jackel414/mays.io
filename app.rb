@@ -144,4 +144,10 @@ class ZacharyMays < Sinatra::Base
     haml :redesign, :layout => false
   end
 
+  get '/wedding' do
+    env['warden'].authenticate!
+    @title = 'The Mays Wedding'
+    haml :wedding, :layout => false
+  end
+
 end

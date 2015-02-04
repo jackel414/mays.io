@@ -3,6 +3,10 @@
   border: none;
 }
 
+#wedding-header {
+  background: url('/rose-lincoln.jpg') no-repeat center center;
+}
+
 /*
 
 .center-block {
