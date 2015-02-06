@@ -7,16 +7,22 @@
   background: url('/rose-lincoln.jpg') no-repeat center center;
 }
 
-/*
+/******** SITE REDESIGN STYLES ***********/
 
-.center-block {
-  margin: 30px 0;
+#home_panel {
+  background: url('/background_image_large.jpg') no-repeat center center;
 }
 
 .panel {
   height: 200px;
   text-align: center;
   padding-top: 75px;
+}
+
+
+
+.center-block {
+  margin: 30px 0;
 }
 
 .panel-body {
@@ -86,10 +92,6 @@
   cursor: pointer;
 }
 
-#home_panel {
-  background: url('/background_image_large.jpg') no-repeat center center;
-}
-
 .homeLink {
   float: right;
 }
@@ -98,7 +100,6 @@
   cursor: pointer;
 }
 
-*/
 
 
 
