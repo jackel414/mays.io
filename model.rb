@@ -28,6 +28,15 @@ class User
   end
 end
 
+class Song
+  include DataMapper::Resource
+
+  property :id, Serial
+  property :song_name, Text, :required => true
+  property :requestor, Text, :required => true
+  property :created, DateTime
+end
+
 # Tell DataMapper the models are done being defined
 DataMapper.finalize
 

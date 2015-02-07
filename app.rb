@@ -150,4 +150,10 @@ class ZacharyMays < Sinatra::Base
     haml :wedding, :layout => false
   end
 
+  post '/submit_song' do
+    @song = Song.new(:song_name => params[:song_name], :requestor => params[:requestor], :created => Time.now)
+    @song.save
+    redirect '/wedding'
+  end
+
 end
