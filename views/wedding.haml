@@ -24,6 +24,9 @@
     .container
       %p{:class => 'lead'}
         This is the page for our wedding!
+      -if flash[:notice]
+        %div{:style => "color: green"}
+          =flash[:notice]
       %form{:class => 'form-signin', :role => 'form', :action => '/submit_song', :method => 'post'}
         %h2{:class => 'form-signin-heading'}Suggest A Song:
         %div{:class => 'form-group'}

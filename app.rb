@@ -153,6 +153,7 @@ class ZacharyMays < Sinatra::Base
   post '/submit_song' do
     @song = Song.new(:song_name => params[:song_name], :requestor => params[:requestor], :created => Time.now)
     @song.save
+    flash[:notice] = "Thanks for the suggestion!"
     redirect '/wedding'
   end
 
