@@ -10,10 +10,10 @@
       dataTable.addColumn('number', 'Hours');
       dataTable.addRows([
         ['JavaScript', 4],
-        ['Ruby', 5],
+        ['Ruby', 3],
         ['Python', 2],
-        ['HTML / CSS', 4],
-        ['PHP', 5]
+        ['HTML / CSS', 3],
+        ['PHP', 6]
       ]);
 
       var options = {
@@ -52,6 +52,7 @@
   %div{:id => "piechart"}
   #programming_skills
     %ul{:id => "php_skills", :class => "skill_list"}
+      %li Symfony
       %li CakePHP
     %ul{:id => "ruby_skills", :class => "skill_list"}
       %li Ruby on Rails
@@ -64,6 +65,7 @@
       %li HAML
       %li SASS
     %ul{:id => "js_skills", :class => "skill_list"}
+      %li Ember.js
+      %li Angular.js
       %li JQuery
-      %li Backbone.js
       %li Node.js
