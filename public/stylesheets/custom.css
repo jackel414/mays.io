@@ -1,0 +1,41 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
+@font-face {
+	font-family: "DanielBold";
+	src: url('/fonts/DanielBold/DanielBold.eot');
+	src: url('/fonts/DanielBold/DanielBold.woff') format('woff'),
+		 url('/fonts/DanielBold/DanielBold.ttf') format('truetype'),
+		 url('/fonts/DanielBold/DanielBold.svg#webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "DanielBlack";
+	src: url('/fonts/DanielBlack/DanielBlack.eot');
+	src: url('/fonts/DanielBlack/DanielBlack.woff') format('woff'),
+		 url('/fonts/DanielBlack/DanielBlack.ttf') format('truetype'),
+		 url('/fonts/DanielBlack/DanielBlack.svg#webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Fofer";
+	src: url('/fonts/Fofer/Fofer.eot');
+	src: url('/fonts/Fofer/Fofer.woff') format('woff'),
+		 url('/fonts/Fofer/Fofer.ttf') format('truetype'),
+		 url('/fonts/Fofer/Fofer.svg#webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1 {
+	font-family: "DanielBlack";
+	font-size: 50px;
+}
+
+.sub-title {
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+}
