@@ -67,10 +67,10 @@ class ZacharyMays < Sinatra::Base
   
   
   get '/' do
-    @title = 'Zachary Mays | Home'
+    @title = 'mays | io'
     @user = session[:access]
     session[:message] = nil
-  	haml :index
+    erb :home, :layout => false
   end
   
   get '/new' do
@@ -142,12 +142,6 @@ class ZacharyMays < Sinatra::Base
     env['warden'].authenticate!
     @title = 'Zachary Mays | Site Redesign'
     haml :redesign, :layout => false
-  end
-
-  get '/redesign2' do
-    env['warden'].authenticate!
-    @title = 'mays | io'
-    erb :redesign2, :layout => false
   end
 
   get '/wedding' do
