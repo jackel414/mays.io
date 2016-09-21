@@ -52,6 +52,15 @@ h1 {
 	font-size: 72px;
 }
 
+h2 {
+	margin-top: 100px;
+	font-family: 'DanielBlack';
+}
+
+h3 {
+	font-family: 'OpenSans', sans-serif;
+}
+
 p {
 	font-family: 'Roboto', sans-serif;
 }
@@ -77,8 +86,22 @@ p {
 }
 
 .content-section {
-	position:fixed;
+	position: absolute;
 	height:100%;
 	width:100%;
 	top: 0px;
+}
+
+.project-panel {
+	margin-top: 30px;
+	height: 400px;
+}
+
+#project1, #project2 {
+	/*background: url('/background_image_large.jpg') no-repeat center center;*/
+	height: 300px;
+}
+
+#project1, #project2:hover {
+	cursor: pointer;
 }
