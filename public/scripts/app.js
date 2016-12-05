@@ -38,18 +38,24 @@ $(document).ready(function() {
             contactSection.slideUp();
             contactSection.addClass('collapse');
         }
-    })
+    });
 
-    $('#projects-link').on('click', function(e) {
+    $('#contact-form').on('submit', function(e) {
         e.preventDefault();
-        var projectsSection = $('#projects');
-        if ( projectsSection.hasClass('collapse') ) {
-            projectsSection.slideDown();
-            projectsSection.removeClass('collapse');
-        } else {
-            projectsSection.slideUp();
-            projectsSection.addClass('collapse');
-        }
+        var name = $('#fullName').val();
+        var email = $('#email').val();
+        var comments = $('#comments').val();
+
+        $.ajax({
+            method: "POST",
+            url: "/contact",
+            data: { name: name, email: email, comments: comments }
+        })
+        .done(function( response ) {
+            console.log(response);
+        });
+        $('#contact').slideUp();
+        $('#contact').addClass('collapse');
     })
 });
 

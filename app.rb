@@ -133,6 +133,24 @@ class ZacharyMays < Sinatra::Base
     haml :contact
   end
 
+  post '/contact' do
+    Pony.mail :to => 'zack@mays.io',
+              :from => 'info@mays.io',
+              :subject => 'Contact Form Completed',
+              :body => 'Someone just completed your contact form. They said:' + params[:comments],
+              :via => :smtp,
+              :via_options => {
+                :address => 'smtp.gmail.com',
+                :port => '465',
+                :user_name => ENV['email_username'],
+                :password => ENV['email_password'],
+                :authentication => :plain,
+                :enable_starttls_auto => true
+              }
+    status 200
+    body "success"
+  end
+
   get '/about' do
     @title = 'Zachary Mays | About'
     haml :about
