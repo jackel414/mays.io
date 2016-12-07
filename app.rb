@@ -134,17 +134,17 @@ class ZacharyMays < Sinatra::Base
   end
 
   post '/contact' do
-    Pony.mail :to => 'zack@mays.io',
+    Pony.mail :to => ENV['to_email'],
               :from => 'info@mays.io',
-              :subject => 'Contact Form Completed',
-              :body => 'Someone just completed your contact form. They said:' + params[:comments],
+              :subject => 'Mays IO Contact Form Completed',
+              :body => 'Body: ' + params[:comments] + ' Email: ' + params[:email] + '. Name: ' + params[:name],
               :via => :smtp,
               :via_options => {
-                :address => 'smtp.gmail.com',
-                :port => '465',
+                :address => 'smtp.mailtrap.io',
+                :port => 2525,
                 :user_name => ENV['email_username'],
                 :password => ENV['email_password'],
-                :authentication => :plain,
+                :authentication => 'plain',
                 :enable_starttls_auto => true
               }
     status 200
