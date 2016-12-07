@@ -23,8 +23,10 @@ $(document).ready(function() {
 
     $('.icon').mouseleave(function() {
         var type = $(this).attr('rel');
-        $(this).addClass(iconSwaps[type].base);
-        $(this).removeClass(iconSwaps[type].hover);
+        if ( type != 'contact' || $('#contact').hasClass('collapse') ) {
+            $(this).addClass(iconSwaps[type].base);
+            $(this).removeClass(iconSwaps[type].hover);
+        }
     });
 
     $('#contact-link').on('click', function(e) {
@@ -39,6 +41,15 @@ $(document).ready(function() {
             contactSection.addClass('collapse');
         }
     });
+
+    $('#contact-close').on('click', function() {
+        var contactSection = $('#contact');
+        contactSection.slideUp();
+        contactSection.addClass('collapse');
+        var icon = $('.fa-paper-plane');
+        icon.addClass('fa-paper-plane-o');
+        icon.removeClass('fa-paper-plane');
+    })
 
     $('#contact-form').on('submit', function(e) {
         e.preventDefault();
