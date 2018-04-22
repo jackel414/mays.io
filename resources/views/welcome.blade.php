@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- <link rel="stylesheet" href="stylesheets/bootstrap.css"> -->
         <link rel="stylesheet" href="css/app.css">
@@ -23,39 +24,21 @@
         <div id="home" class="col-sm-12 text-center content-section show">
                 <h1 id="title">mays | io</h1>
                 <p id="sub-title">DEVELOP SIMPLY</p>
-                <div class="icon-row row">
-                    <div class="icon-container">
-                        <a href="#" id="contact-link"><i class="fa fa-paper-plane-o fa-4x icon" aria-hidden="true" rel="contact"></i></a>
-                    </div>
-                    <div class="icon-container">
-                        <a href="https://www.linkedin.com/in/zackmays"><i class="fa fa-user-circle-o fa-4x icon" aria-hidden="true" rel="about"></i></a>
-                    </div>
-                    <div class="icon-container">
-                        <i class="fa fa-briefcase fa-4x" aria-hidden="true" rel="projects"></i>
-                    </div>
-                </div>
-
-                <div id="contact" class="row collapse col-sm-6 col-sm-offset-3">
-                    <div class="row">
-                        <div class="col-sm-10 col-sm-offset-1">
-                            <form action="/contact" method="POST" id="contact-form">
-                                <div class="form-group">
-                                    <label for="fullName">Name</label>
-                                    <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email Address</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="comments">Comments</label>
-                                    <textarea class="form-control" rows="3" id="comments" name="comments"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-default">Submit</button>
-                            </form>
+                <div id="app">
+                    <div class="icon-row row">
+                        <div class="icon-container">
+                            <div class="image-link" @click="showModal = true"><i class="fa fa-paper-plane-o fa-4x icon" aria-hidden="true" rel="contact"></i></div>
+                        </div>
+                        <div class="icon-container">
+                            <a href="https://www.linkedin.com/in/zackmays"><i class="fa fa-user-circle-o fa-4x icon" aria-hidden="true" rel="about"></i></a>
+                        </div>
+                        <div class="icon-container">
+                            <i class="fa fa-briefcase fa-4x" aria-hidden="true" rel="projects"></i>
                         </div>
                     </div>
-                    <span id="contact-close">x</span>
+                    <contact-form v-if="showModal" @close="showModal = false">
+                        <h3 slot="header">Contact Form</h3>
+                    </contact-form>
                 </div>
 
                 <div id="projects" class="row collapse">
