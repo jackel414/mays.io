@@ -123,13 +123,12 @@ p {
     height: 400px;
 }
 
-#project1, #project2 {
+.individual-project {
     /*background: url('/background_image_large.jpg') no-repeat center center;*/
     height: 300px;
-}
-
-#project1, #project2:hover {
-    cursor: pointer;
+    &:hover {
+      cursor: pointer;
+    }
 }
 
 .icon {
@@ -166,7 +165,6 @@ a .icon {
 }
 
 #projects {
-    background: white;
     margin-top: 30px;
     padding-top: 30px;
     padding-bottom: 60px;
