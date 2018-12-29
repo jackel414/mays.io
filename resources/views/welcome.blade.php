@@ -33,7 +33,7 @@
                             <a href="https://www.linkedin.com/in/zackmays"><i class="fa fa-user-circle-o fa-4x icon" aria-hidden="true" rel="about"></i></a>
                         </div>
                         <div class="icon-container">
-                            <i class="fa fa-briefcase fa-4x" aria-hidden="true" rel="projects"></i>
+                            <a href="/apps"><i class="fa fa-folder-open fa-4x icon" aria-hidden="true" rel="projects"></i></a>
                         </div>
                     </div>
                     <contact-form v-if="showModal" @close="showModal = false">

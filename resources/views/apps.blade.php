@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Test</title>
+        <title>mays | io</title>
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,24 +21,15 @@
             </div>
         </div>
 
-        <div id="home" class="col-sm-12 text-center content-section collapse">
-                <h1 id="title">mays | io</h1>
-                <p id="sub-title">DEVELOP SIMPLY</p>
+        <div id="home" class="col-sm-12 text-center content-section show">
+                <h1 id="title"><a href="/">mays | io</a></h1>
+                <p id="sub-title">PROJECTS</p>
                 <div id="app">
                     <div class="icon-row row">
                         <div class="icon-container">
-                            <div class="image-link" @click="showModal = true"><i class="fa fa-paper-plane-o fa-4x icon" aria-hidden="true" rel="contact"></i></div>
-                        </div>
-                        <div class="icon-container">
-                            <a href="https://www.linkedin.com/in/zackmays"><i class="fa fa-user-circle-o fa-4x icon" aria-hidden="true" rel="about"></i></a>
-                        </div>
-                        <div class="icon-container">
-                            <i class="fa fa-briefcase fa-4x" aria-hidden="true" rel="projects"></i>
+                            <div class="project-logo"><a href="http://url-inspector.mays.io"><img src="/images/url_inspector_logo.png"></a></div>
                         </div>
                     </div>
-                    <contact-form v-if="showModal" @close="showModal = false">
-                        <h3 slot="header">Contact Form</h3>
-                    </contact-form>
                 </div>
 
                 <div id="projects" class="row collapse">
@@ -52,11 +43,7 @@
                 </div>
         </div>
 
-        <div id="about" class="col-sm-12 text-center content-section collapse">
-            <h1>About</h1>
-        </div>
-
-        <div id="projects" class="col-sm-12 text-center content-section show">
+        <div id="projects" class="col-sm-12 text-center content-section collapse">
             <h2>Projects</h2>
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1">

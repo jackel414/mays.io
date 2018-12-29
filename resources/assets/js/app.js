@@ -106,7 +106,7 @@ var iconSwaps = {
         'hover': 'fa-user-circle'
     },
     'projects': {
-        'base': 'fa-folder-open-o',
-        'hover': 'fa-folder-open'
+        'base': 'fa-folder-open',
+        'hover': 'fa-folder-open-o'
     }
 }

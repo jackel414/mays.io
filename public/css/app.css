@@ -8498,6 +8498,11 @@ a:focus {
   color: #000000;
 }
 
+#title a {
+  color: #000000;
+  text-decoration: none;
+}
+
 #sub-title {
   font-family: 'OpenSans', sans-serif;
   font-size: 18px;
@@ -8548,10 +8553,6 @@ a .icon {
   color: #333;
 }
 
-.fa-briefcase {
-  opacity: .5;
-}
-
 #contact {
   background: white;
   margin-top: 30px;
@@ -8562,6 +8563,14 @@ a .icon {
 
 .test-border {
   border: 1px solid red;
+}
+
+.project-logo {
+  width: 100px;
+}
+
+.project-logo img {
+  width: 100%;
 }
 
 #projects {
