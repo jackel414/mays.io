@@ -13,8 +13,12 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/apps', function() {
     return view('apps');
+});
+
+Route::get('/contact', function() {
+    return redirect()->route('home');
 });

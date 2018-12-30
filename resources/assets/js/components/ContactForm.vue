@@ -11,18 +11,18 @@
           </div>
 
           <div class="modal-body">
-            <form action="/contact" method="POST" id="contact-form">
+            <form action="#" @submit.prevent="submitForm()" id="contact-form">
                 <div class="form-group">
                     <label for="fullName">Name</label>
-                    <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Name" required>
+                    <input v-model="name" type="text" class="form-control" id="fullName" name="fullName" placeholder="Name" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
+                    <input v-model="email" type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
                 </div>
                 <div class="form-group">
                     <label for="comments">Comments</label>
-                    <textarea class="form-control" rows="3" id="comments" name="comments"></textarea>
+                    <textarea v-model="message" class="form-control" rows="3" id="comments" name="comments"></textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
@@ -36,13 +36,33 @@
 
 <script>
     export default {
-        mounted() {
+        mounted: function() {
             console.log('Component mounted.')
         },
-        data() {
+        data: function() {
             return {
-                showModal: false
+                showModal: false,
+                name: '',
+                email: '',
+                message: ''
             }
+        },
+        methods: {
+          submitForm: function() {
+            let self = this;
+            let params = {};
+            params.name = self.name;
+            params.email = self.email;
+            params.message = self.message;
+
+            axios.post('api/contact', params)
+              .then(function(){
+                self.$emit('close');
+              })
+              .catch(function(error){
+                console.log(error);
+              });
+          }
         }
     }
 </script>

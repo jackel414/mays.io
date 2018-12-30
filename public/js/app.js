@@ -981,6 +981,8 @@ __webpack_require__(11);
 
 window.Vue = __webpack_require__(35);
 
+var axios = __webpack_require__(16);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -43201,8 +43203,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-            showModal: false
+            showModal: false,
+            name: '',
+            email: '',
+            message: ''
         };
+    },
+    methods: {
+        submitForm: function submitForm() {
+            var self = this;
+            var params = {};
+            params.name = self.name;
+            params.email = self.email;
+            params.message = self.message;
+
+            axios.post('api/contact', params).then(function () {
+                self.$emit('close');
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
     }
 });
 
@@ -43233,10 +43253,12 @@ var render = function() {
             _c(
               "form",
               {
-                attrs: {
-                  action: "/contact",
-                  method: "POST",
-                  id: "contact-form"
+                attrs: { action: "#", id: "contact-form" },
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    _vm.submitForm()
+                  }
                 }
               },
               [
@@ -43244,6 +43266,14 @@ var render = function() {
                   _c("label", { attrs: { for: "fullName" } }, [_vm._v("Name")]),
                   _vm._v(" "),
                   _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.name,
+                        expression: "name"
+                      }
+                    ],
                     staticClass: "form-control",
                     attrs: {
                       type: "text",
@@ -43251,6 +43281,15 @@ var render = function() {
                       name: "fullName",
                       placeholder: "Name",
                       required: ""
+                    },
+                    domProps: { value: _vm.name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.name = $event.target.value
+                      }
                     }
                   })
                 ]),
@@ -43261,6 +43300,14 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.email,
+                        expression: "email"
+                      }
+                    ],
                     staticClass: "form-control",
                     attrs: {
                       type: "email",
@@ -43268,6 +43315,15 @@ var render = function() {
                       name: "email",
                       placeholder: "Email Address",
                       required: ""
+                    },
+                    domProps: { value: _vm.email },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.email = $event.target.value
+                      }
                     }
                   })
                 ]),
@@ -43278,8 +43334,25 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.message,
+                        expression: "message"
+                      }
+                    ],
                     staticClass: "form-control",
-                    attrs: { rows: "3", id: "comments", name: "comments" }
+                    attrs: { rows: "3", id: "comments", name: "comments" },
+                    domProps: { value: _vm.message },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.message = $event.target.value
+                      }
+                    }
                   })
                 ]),
                 _vm._v(" "),
