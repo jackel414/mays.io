@@ -51,10 +51,8 @@ $(document).ready(function() {
 
     $('.icon').mouseleave(function() {
         var type = $(this).attr('rel');
-        if ( type != 'contact' || $('#contact').hasClass('collapse') ) {
-            $(this).addClass(iconSwaps[type].base);
-            $(this).removeClass(iconSwaps[type].hover);
-        }
+        $(this).addClass(iconSwaps[type].base);
+        $(this).removeClass(iconSwaps[type].hover);
     });
 
     $('#contact-link').on('click', function(e) {
