@@ -1,0 +1,1 @@
+Mays.io site, built with Laravel.
