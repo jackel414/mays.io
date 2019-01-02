@@ -27,7 +27,7 @@
                 <div id="app">
                     <div class="icon-row row">
                         <div class="icon-container">
-                            <div class="project-logo"><a href="http://url-inspector.mays.io"><img src="/images/url_inspector_logo.png"></a></div>
+                            <div class="project-logo"><a href="http://url-inspector.mays.io"><img src="/images/url_inspector_logo_2.png"></a></div>
                         </div>
                     </div>
                 </div>
